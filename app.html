@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow - Dashboard</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <div class="header-content">
+          <div class="header-left">
+            <div class="logo">
+              <span class="logo-text">TaskFlow</span>
+            </div>
+          </div>
+
+          <div class="header-right">
+            <div class="user-profile">
+              <img id="userAvatar" class="user-avatar" alt="User Avatar" />
+              <div class="user-info">
+                <span id="userName" class="user-name"></span>
+                <button id="signOutBtn" class="sign-out-btn">Sign Out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <div class="tabs-container">
+          <div class="tabs-header">
+            <button class="tab-btn active" data-tab="todo">
+              Todo
+              <span class="tab-count" id="todoCount">0</span>
+            </button>
+            <button class="tab-btn" data-tab="completed">
+              Completed
+              <span class="tab-count" id="completedCount">0</span>
+            </button>
+            <button class="tab-btn" data-tab="archived">
+              Archived
+              <span class="tab-count" id="archivedCount">0</span>
+            </button>
+          </div>
+
+          <div class="task-input-section">
+            <div class="input-container">
+              <input
+                type="text"
+                id="taskInput"
+                placeholder="What needs to be done?"
+                maxlength="200"
+              />
+              <button id="addTaskBtn" class="add-task-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+                Add Task
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content">
+            <div class="task-list active" id="todoList" data-stage="todo"></div>
+            <div
+              class="task-list"
+              id="completedList"
+              data-stage="completed"
+            ></div>
+            <div
+              class="task-list"
+              id="archivedList"
+              data-stage="archived"
+            ></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-spinner"></div>
+      <p>Loading your tasks...</p>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

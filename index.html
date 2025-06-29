@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow - Welcome</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="welcome-container">
+        <div class="welcome-card">
+          <div class="logo-section">
+            <div class="logo">
+              <span class="logo-text">TaskFlow</span>
+            </div>
+            <p class="tagline">Your Personal Productivity Companion</p>
+          </div>
+          
+          <form id="welcome-form" class="welcome-form">
+            <div class="form-group">
+              <label for="userName">What's your name?</label>
+              <input 
+                type="text" 
+                id="userName" 
+                name="userName" 
+                placeholder="Enter your full name"
+                required
+              />
+              <span class="error-message" id="nameError"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="dateOfBirth">When were you born?</label>
+              <input 
+                type="date" 
+                id="dateOfBirth" 
+                name="dateOfBirth"
+                required
+              />
+              <span class="error-message" id="ageError"></span>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+              <span>Get Started</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </form>
+          
+          <div class="privacy-note">
+            <p>Your information is stored locally on your device for your privacy and security.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="locale-placeholder" data-locale="guj" style="display: none;"></div>
+    
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
